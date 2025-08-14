@@ -1,0 +1,90 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    
+    background: 
+        linear-gradient(135deg, rgba(67,198,172,0.7) 0%, rgba(248,255,174,0.7) 100%),
+         url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#background-clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding-top: -700px;
+    transform: translate(-50%, -50%);
+    font-size: 10rem;
+    color: rgba(10, 10, 10, 0.1);
+    font-family: 'Courier New', Courier, monospace;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+    animation: fadeClock 4s infinite alternate;
+}
+
+@keyframes fadeClock {
+    10000% { opacity: 0.10; }
+    100% { opacity: 0.25; }
+}
+
+#card {
+    width: 220px;
+    min-height: 220px;
+    background:
+        url('https://cdn.pixabay.com/photo/2013/07/13/12/46/clock-146168_1280.png') center center no-repeat,
+        linear-gradient(90deg, #ffecd2 0%, #fcb69f 100%);
+    background-size: 140px, cover; 
+    font-size: 1.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 140px;
+    box-shadow: 0 0px 24px rgba(0,0,0,0.18);
+    cursor: pointer;
+    transition: background 0.4s, color 0.4s, transform 0.2s;
+    margin-bottom: 420px;
+    z-index: 1;
+    position: relative;
+    animation: floatCard 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatCard {
+   0% { transform: translateY(0); }
+    100% { transform: translateY(0px); }
+}
+
+#card:hover {
+    background: linear-gradient(90deg, #91908f 0%, #ffd200 100%);
+    color: #222;
+    transform: scale(1.03);
+}
+
+#clock {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5rem;
+    
+    letter-spacing: 2px;
+    margin-top: 10px;
+    padding: 10px 24px;
+    border-radius: 8px;
+    
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    z-index: 1;
+    position: relative;
+    animation: pulseClock 2s infinite alternate;
+}
+
+@keyframes pulseClock {
+    0% { box-shadow: 0 2px 8px rgba(0,0,0,0.10);}
+    100% { box-shadow: 0 6px 24px rgba(24,90,157,0.18);}
+}
